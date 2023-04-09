@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 00:14:29 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/09 17:01:30 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/09 22:31:36 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	check(char *nb, int i, long *result, int *sign)
 		if ((nb[i] >= '0' && nb[i] <= '9'))
 			*result += nb[i] - '0';
 		i++;
-	}	
+	}
 }
 
 long	ft_atoi(char *str)
@@ -55,6 +55,11 @@ long	ft_atoi(char *str)
 	while ((nb[i] >= 8 && nb[i] <= 13) || nb[i] == ' ')
 		i++;
 	check(nb, i, &result, &sign);
+	if (result == -1)
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 	result = result * sign;
 	return (result);
 }

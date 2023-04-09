@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 18:50:47 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/09 17:16:16 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/09 23:21:51 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,27 @@ int	ft_strlen2d(char **str)
 	return (i);
 }
 
+void	error(int ac, char **av)
+{
+	int	i;
+
+	i = 0;
+	while (i < ac)
+	{
+		if (ft_strlen(av[i]) == 0)
+		{
+			write(2, "Error\n", 6);
+			exit(1);
+		}
+		i++;
+	}
+}
+
 int	main(int ac, char **av)
 {
-	int		i;
-	char	**first;
-	t_nb	stack_a;
-	t_nb	stack_b;
-	t_nb	stack_tmp;
-
 	if (ac > 1)
 	{
+		error(ac, av);
 		init(ac, av);
 	}
 }
