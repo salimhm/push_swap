@@ -1,54 +1,49 @@
-CC			=	gcc
+CC		= 	gcc
 
-CFLAGS  	=	-Wall -Wextra -Werror
+CFLAGS	= 	-Wall -Wextra -Werror
 
-OBJS		=	${SRCS:.c=.o}
+SRCS	= 	push_swap.c\
+			ft_error.c\
+			stack_a.c\
+			stack_b.c\
+			sort_three.c\
+			check_sorted.c\
+		  	sort_five.c\
+			sort_four.c\
+			sort_all.c\
+			sort_tmp_arr.c\
+			free.c\
+			init.c\
+			sort_all2.c\
+		  	sort_all_extended.c\
+			sort_all3.c\
+			utils.c\
+			sort_five2.c\
+			range.c\
 
-SRCS		=	push_swap.c\
-				ft_error.c\
-				stack_a.c\
-				stack_b.c\
-				sort_three.c\
-				check_sorted.c\
-				sort_five.c\
-				sort_four.c\
-				sort_all.c\
-				sort_tmp_arr.c\
-				free.c\
-				init.c\
-				sort_all2.c\
-				sort_all_extended.c\
-				sort_all3.c\
-				utils.c\
-				sort_five2.c\
-				
+LIBFT	= 	make -C libft
 
-libft		=	make -C libft 
+NAME	= 	push_swap
 
-NAME		=	push_swap
-
-RM			=	rm -f
-
-%.o : %.c 
-	${CC}  -c $< -o $@
+RM		= 	rm -f
 
 all: ${NAME}
 
-${NAME}:	${OBJS}
+${NAME}:	${SRCS}
 			@echo "\033[0;32m"
-			${libft}
+			${LIBFT}
 			@echo "\033[0;33m"
-			${CC} ${CFLAGS} ${OBJS} libft/libft.a -o ${NAME}
-
+			${CC} ${CFLAGS} $^ -o $@ -Llibft -lft
 
 clean:
-		@echo "\033[1;31m"
-		${libft} clean
-		${RM} ${OBJS}
+			@echo "\033[1;31m"
+			${LIBFT} clean
 
-fclean:	clean
-		@echo "\033[1;31m"
-		${libft} fclean
-		${RM} ${NAME}
+fclean:		clean
+			@echo "\033[1;31m"
+			${LIBFT} fclean
+			${RM} ${NAME}
 
-re:		fclean all
+re: 		fclean all
+
+.PHONY:	 all clean fclean re

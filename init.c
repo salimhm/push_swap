@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:09:05 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/09 20:52:35 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/11 20:59:35 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,9 +96,17 @@ void	fun2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first)
 	}
 	if (stack_a->size >= 6)
 	{
+		// int i = stack_a->lol;
+		// printf("------------------Stack A------------------\n");
+		// while(i < stack_a->size)
+		// {
+		// 	printf("%d\n", stack_a->nb[i]);
+		// 	i++;
+		// }
 		sort_tmp_arr(stack_tmp);
-		sort_all(stack_a, stack_b, stack_tmp);
-		free_and_exit(stack_a, stack_b, stack_tmp, first);
+		range(stack_a, stack_b, stack_tmp);
+		// sort_all(stack_a, stack_b, stack_tmp);
+		// free_and_exit(stack_a, stack_b, stack_tmp, first);
 	}
 }
 

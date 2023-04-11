@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 19:06:39 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/08 18:38:48 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/11 02:46:25 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	sort_all(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp)
 		sort_500(stack_a, stack_b, stack_tmp, chunks);
 	else if (stack_a->size < 500)
 		sort_100(stack_a, stack_b, stack_tmp, chunks);
-	push_to_a(stack_a, stack_b, stack_tmp);
+	push_to_a(stack_a, stack_b);
 }
 
-int	calc_score(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, t_op *operations)
+int	calc_score(t_nb *stack_a, t_nb *stack_b, t_op *operations)
 {
 	int	i;
 	int	j;
@@ -52,7 +52,7 @@ int	calc_score(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, t_op *operations)
 	return (0);
 }
 
-void	push_to_a(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp)
+void	push_to_a(t_nb *stack_a, t_nb *stack_b)
 {
 	int		j;
 	int		min_score;
@@ -63,7 +63,7 @@ void	push_to_a(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp)
 	operations->size = stack_b->size;
 	while (stack_b->size)
 	{
-		calc_score(stack_a, stack_b, stack_tmp, operations);
+		calc_score(stack_a, stack_b, operations);
 		min_score = find_min_score(operations, stack_b);
 		push_to_a_2(min_score, stack_a, stack_b, operations);
 	}

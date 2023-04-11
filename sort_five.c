@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 22:52:04 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/08 20:31:27 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/10 21:31:04 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ int	find_index_smallest(t_nb *stack_a)
 
 void	check_smallest_five(t_nb *stack_a, t_nb *stack_b, int find_index_small)
 {
-	int	i;
-
 	if (find_index_small < 2)
 	{
 		if (stack_a->nb[0] == stack_a->nb[find_index_small])

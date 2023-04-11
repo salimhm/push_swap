@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:20:50 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/08 18:24:24 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/10 00:52:58 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	find_next_big_num(int nb, t_nb *stack_a)
 	tmp_size = stack_a->size - stack_a->lol;
 	tmp = malloc(tmp_size * sizeof(int));
 	find_next_bing_num2(stack_a, tmp, tmp_size);
-	next_big_num = find_next_bing_num3(stack_a, tmp, tmp_size, nb);
+	next_big_num = find_next_bing_num3(tmp, tmp_size, nb);
 	j = stack_a->lol;
 	while (j < stack_a->size)
 	{

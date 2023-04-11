@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 01:37:37 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/08 18:45:05 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/10 21:56:34 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	find_next_bing_num2(t_nb *stack_a, int *tmp, int tmp_size)
 {
 	int	i;
 	int	j;
-	int	key;
+	int	next;
 
 	i = 0;
 	j = stack_a->lol;
@@ -77,19 +77,19 @@ void	find_next_bing_num2(t_nb *stack_a, int *tmp, int tmp_size)
 	i = 1;
 	while (i < tmp_size)
 	{
-		key = tmp[i];
+		next = tmp[i];
 		j = i - 1;
-		while (j >= 0 && tmp[j] > key)
+		while (j >= 0 && tmp[j] > next)
 		{
 			tmp[j + 1] = tmp[j];
 			j--;
 		}
-		tmp[j + 1] = key;
+		tmp[j + 1] = next;
 		i++;
 	}
 }
 
-int	find_next_bing_num3(t_nb *stack_a, int *tmp, int tmp_size, int nb)
+int	find_next_bing_num3(int *tmp, int tmp_size, int nb)
 {
 	int		i;
 	int		next_big_num;

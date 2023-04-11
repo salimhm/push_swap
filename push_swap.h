@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 18:50:50 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/09 18:25:38 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/11 18:03:39 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft/libft.h"
 # include <unistd.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -74,9 +75,8 @@ void	push(t_nb *stack_a, t_nb *stack_tmp, int index);
 void	sort_tmp_arr(t_nb *stack_tmp);
 
 //Push To A After chunks
-void	push_to_a(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp);
-int		calc_score(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp,
-			t_op *operations);
+void	push_to_a(t_nb *stack_a, t_nb *stack_b);
+int		calc_score(t_nb *stack_a, t_nb *stack_b, t_op *operations);
 void	final_step(t_nb *stack_a);
 void	push_to_a_2(int index, t_nb *stack_a, t_nb *stack_b, t_op *operations);
 
@@ -97,7 +97,7 @@ void	sort_500(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, int chunks);
 void	sort_100(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, int chunks);
 
 void	find_next_bing_num2(t_nb *stack_a, int *tmp, int tmp_size);
-int		find_next_bing_num3(t_nb *stack_a, int *tmp, int tmp_size, int nb);
+int		find_next_bing_num3(int *tmp, int tmp_size, int nb);
 void	init_to_zero(t_nb *stack_b, t_op *operations);
 int		find_next_big_num(int nb, t_nb *stack_a);
 void	case1(t_nb *stack_a, t_nb *stack_b, t_op *operations, int i);
@@ -109,5 +109,6 @@ int		find_min_score(t_op *operations, t_nb *stack_b);
 void	sort_five2(t_nb *stack_a, t_nb *stack_b, int find_index_small);
 void	sort_three2(t_nb *stack_a, int i);
 void	fun2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first);
+void	range(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp);
 
 #endif
