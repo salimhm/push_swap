@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:09:05 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/11 20:59:35 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/11 21:25:31 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,24 +89,25 @@ void	fun(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first)
 
 void	fun2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first)
 {
+	int interval;
 	if (stack_a->size == 5)
 	{
 		sort_five(stack_a, stack_b);
 		free_and_exit(stack_a, stack_b, stack_tmp, first);
 	}
-	if (stack_a->size >= 6)
+	if (stack_a->size >= 6 && stack_a->size <= 100)
 	{
-		// int i = stack_a->lol;
-		// printf("------------------Stack A------------------\n");
-		// while(i < stack_a->size)
-		// {
-		// 	printf("%d\n", stack_a->nb[i]);
-		// 	i++;
-		// }
+		interval = 15;
 		sort_tmp_arr(stack_tmp);
-		range(stack_a, stack_b, stack_tmp);
-		// sort_all(stack_a, stack_b, stack_tmp);
-		// free_and_exit(stack_a, stack_b, stack_tmp, first);
+		range(stack_a, stack_b, stack_tmp, interval);
+		free_and_exit(stack_a, stack_b, stack_tmp, first);
+	}
+	else if (stack_a->size > 100)
+	{
+		interval = 35;
+		sort_tmp_arr(stack_tmp);
+		range(stack_a, stack_b, stack_tmp, interval);
+		free_and_exit(stack_a, stack_b, stack_tmp, first);
 	}
 }
 

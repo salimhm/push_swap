@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 18:50:50 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/11 18:03:39 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/11 21:25:19 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,6 @@ int		find_min_score(t_op *operations, t_nb *stack_b);
 void	sort_five2(t_nb *stack_a, t_nb *stack_b, int find_index_small);
 void	sort_three2(t_nb *stack_a, int i);
 void	fun2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first);
-void	range(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp);
-
+void	range(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, int interval);
+void	calculate_distance(t_nb *stack_a, t_nb *stack_b);
 #endif

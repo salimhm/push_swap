@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 17:45:24 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/11 21:00:16 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/11 21:22:54 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,9 @@ int    get_pos(t_nb *stack_tmp, int nb)
     return 0;
 }
 
-void range(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp)
+void range(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, int range)
 {
-    int range = 15;
-    // int i = stack_a->lol;
-    // int j = 0;
+    // int range = 35;
     int nb;
     int pos_tmp;
 
@@ -50,14 +48,34 @@ void range(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp)
         {
             ra(stack_a);
         }
-        // i++;
     }
-    // int i;
-    // i = 0;
-    // printf("------------------Stack B After------------------\n");
-    // while (i < stack_b->size)
-    // {
-    //     printf("%d\n", stack_b->nb[i]);
-    //     i++;
-    // }
+    calculate_distance(stack_a, stack_b);
+}
+
+void calculate_distance(t_nb *stack_a, t_nb *stack_b)
+{
+    int i = 0;
+    int shortest_path;
+    int greatest;
+    while (stack_b->size)
+    {
+        greatest = find_greatest(stack_b);
+        if (stack_b->nb[i] == greatest)
+        {
+            shortest_path = i;
+            if (i < stack_b->size / 2)
+            {
+                rrb(stack_b);
+            }
+            else
+                rb(stack_b);
+            if (stack_b->nb[stack_b->size - 1] == greatest)
+            {
+                pa(stack_a, stack_b);
+            }
+            i = 0;
+        }
+        else
+            i++;
+    }
 }
