@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 22:56:48 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/09 02:01:17 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/12 20:40:45 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	sb(t_nb *stack_b)
 		stack_b->nb[i] = stack_b->nb[i - 1];
 		stack_b->nb[i - 1] = temp;
 	}
+	write(1, "sb\n", 3);
 }
 
 void	rb(t_nb *stack_b)

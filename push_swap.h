@@ -6,16 +6,18 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 18:50:50 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/11 21:25:19 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/12 22:43:03 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "/Users/shmimi/pw/libft/libft.h"
 # include <unistd.h>
-# include <stdio.h>
+# include "bonus/gnl/get_next_line.h"
+# include <fcntl.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -111,4 +113,22 @@ void	sort_three2(t_nb *stack_a, int i);
 void	fun2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first);
 void	range(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, int interval);
 void	calculate_distance(t_nb *stack_a, t_nb *stack_b);
+void	error(int ac, char **av);
+
+
+//Bonus
+void	fill_stacks_bonus(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first);
+int     check_sorted_bonus(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp);
+void	ra_bonus(t_nb *stack_a);
+void	rra_bonus(t_nb *stack_a);
+void	pb_bonus(t_nb *stack_a, t_nb *stack_b);
+void	sa_bonus(t_nb *stack_a);
+void	sb_bonus(t_nb *stack_b);
+void	rb_bonus(t_nb *stack_b);
+void	rrb_bonus(t_nb *stack_b);
+void	pa_bonus(t_nb *stack_a, t_nb *stack_b);
+void	ss_bonus(t_nb *stack_a, t_nb *stack_b);
+void	rr_bonus(t_nb *stack_a, t_nb *stack_b);
+void	rrr_bonus(t_nb *stack_a, t_nb *stack_b);
+
 #endif

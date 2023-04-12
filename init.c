@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:09:05 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/11 21:25:31 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/12 18:33:00 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ void	fun(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first)
 
 void	fun2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first)
 {
-	int interval;
+	int	interval;
+
 	if (stack_a->size == 5)
 	{
 		sort_five(stack_a, stack_b);
@@ -104,7 +105,7 @@ void	fun2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first)
 	}
 	else if (stack_a->size > 100)
 	{
-		interval = 35;
+		interval = 45;
 		sort_tmp_arr(stack_tmp);
 		range(stack_a, stack_b, stack_tmp, interval);
 		free_and_exit(stack_a, stack_b, stack_tmp, first);
@@ -113,7 +114,7 @@ void	fun2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first)
 
 void	init_to_zero(t_nb *stack_b, t_op *operations)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (i < stack_b->size)

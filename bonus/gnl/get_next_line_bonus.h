@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 18:50:47 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/12 17:54:32 by shmimi           ###   ########.fr       */
+/*   Created: 2022/12/19 19:11:59 by shmimi            #+#    #+#             */
+/*   Updated: 2023/04/12 01:49:44 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
-int	main(int ac, char **av)
-{
-	if (ac > 1)
-	{
-		error(ac, av);
-		init(ac, av);
-	}
-}
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
+
+char	*ft_strjoin(char *s1, char *s2);
+char	*get_next_line(int fd);
+int		ft_strlen(char *str);
+char	*ft_strchr(char *s, int c);
+char	*ft_strdup(char *s1);
+
+#endif

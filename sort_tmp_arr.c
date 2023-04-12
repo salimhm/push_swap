@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 19:41:16 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/11 20:59:34 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/11 22:19:12 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,4 @@ void	sort_tmp_arr(t_nb *stack_tmp)
 		stack_tmp->nb[j + 1] = next;
 		i++;
 	}
-
-	// i = 0;
-	// printf("------------------Sorted Stack------------------\n");
-	// while(i < stack_tmp->size)
-	// {
-	// 	printf("%d\n", stack_tmp->nb[i]);
-	// 	i++;
-	// }
 }
