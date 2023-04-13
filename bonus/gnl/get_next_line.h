@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 19:11:59 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/12 17:01:52 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/13 02:45:40 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "../../libft/libft.h"
+#include "../../push_swap.h"
 // char	*ft_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
 // int		ft_strlen(char *str);

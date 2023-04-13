@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:08:41 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/12 22:41:57 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/13 02:54:25 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,13 @@ int check_sorted_bonus(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp)
 		else
 			return 0;
 		if (i == stack_a->size - 1)
+		{
+			free(stack_a->nb);
+			free(stack_b->nb);
+			free(stack_tmp->nb);
 			return 1;
+		}
 	}
-	// if (i == stack_a->size - 1)
-	// 	{
-	// 		free(stack_a->nb);
-	// 		free(stack_b->nb);
-	// 		free(stack_tmp->nb);
-	// 		// write(1, "here\n", 5);
-	// 		return 1;
-	// 		// exit(0);
-	// 	}
 	return 0;
 }
 
@@ -196,4 +192,33 @@ void	rrr_bonus(t_nb *stack_a, t_nb *stack_b)
 {
 	rra_bonus(stack_a);
 	rrb_bonus(stack_b);
+}
+
+char	*ft_strjoin_bonus(char *s1, char *s2)
+{
+	char	*new_str;
+	char	*str1;
+	char	*str2;
+	int		i;
+	int		j;
+
+	if (!s1)
+		return (ft_strdup(s2));
+	new_str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	str1 = (char *)s1;
+	str2 = (char *)s2;
+	i = 0;
+	j = 0;
+	if (!new_str)
+		return (0);
+	while (j < ft_strlen(str1))
+	{
+		new_str[j] = str1[j];
+		j++;
+	}
+	while (i < ft_strlen(str2))
+		new_str[j++] = str2[i++];
+	new_str[j] = '\0';
+	free(s1);
+	return (new_str);
 }

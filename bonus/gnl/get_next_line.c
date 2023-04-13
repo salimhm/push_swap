@@ -6,11 +6,9 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 11:37:55 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/12 02:20:31 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/13 02:43:13 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "get_next_line.h"
 
 #include "get_next_line.h"
 
@@ -28,7 +26,7 @@ char	*readd(int fd)
 	while (i > 0)
 	{
 		buff[i] = '\0';
-		rest = ft_strjoin(rest, buff);
+		rest = ft_strjoin_bonus(rest, buff);
 		if (ft_strchr(rest, '\n'))
 			break ;
 		i = read(fd, buff, BUFFER_SIZE);

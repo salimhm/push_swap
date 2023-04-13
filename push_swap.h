@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 18:50:50 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/12 22:43:03 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/13 02:43:38 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,6 @@ void	pa_bonus(t_nb *stack_a, t_nb *stack_b);
 void	ss_bonus(t_nb *stack_a, t_nb *stack_b);
 void	rr_bonus(t_nb *stack_a, t_nb *stack_b);
 void	rrr_bonus(t_nb *stack_a, t_nb *stack_b);
+char	*ft_strjoin_bonus(char *s1, char *s2);
 
 #endif

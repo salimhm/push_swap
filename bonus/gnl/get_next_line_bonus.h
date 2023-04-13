@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 19:11:59 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/12 01:49:44 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/13 02:43:41 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char	*get_next_line(int fd);
 int		ft_strlen(char *str);
 char	*ft_strchr(char *s, int c);
 char	*ft_strdup(char *s1);
+char	*ft_strjoin_bonus(char *s1, char *s2);;
 
 #endif

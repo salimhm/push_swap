@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 22:35:10 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/12 23:27:18 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/13 02:55:40 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,10 @@ int main(int ac, char **av)
         str = av[1];
         while (i < ac)
         {
-            s1 = ft_strjoin(str, " ");
+            s1 = ft_strjoin_bonus(ft_strdup(str), " ");
             if (i > 2)
                 free(str);
-            str = ft_strjoin(s1, av[i]);
-            free(s1);
+            str = ft_strjoin_bonus(s1, av[i]);
             i++;
         }
         check_args(str);
@@ -76,8 +75,8 @@ int main(int ac, char **av)
                 write(2, "Error\n", 6);
                 exit(1);
             }
-            input = get_next_line(0);
             free(input);
+            input = get_next_line(0);
         }
         if (check_sorted_bonus(&stack_a, &stack_b, &stack_tmp) && stack_b.size == 0)
         {
