@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 03:06:53 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/09 17:16:01 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/13 04:51:10 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,15 @@ void	free_and_exit(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp,
 	free(stack_b->nb);
 	free(stack_tmp->nb);
 	exit(0);
+}
+
+void	free_and_exit_bonus(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp,
+		char *input)
+{
+	write(2, "Error\n", 6);
+	free(input);
+	free(stack_a->nb);
+	free(stack_b->nb);
+	free(stack_tmp->nb);
+	exit(1);
 }

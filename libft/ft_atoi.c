@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 00:14:29 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/10 21:36:33 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/28 00:42:32 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,17 @@ static void	check(char *nb, int i, long *result, int *sign)
 {
 	while ((nb[i] >= '0' && nb[i] <= '9') || (nb[i] == '-' || nb[i] == '+'))
 	{
-		if (nb[i] == ' ')
-			i++;
 		if (nb[i] == '-')
 		{
-			if (nb[i + 1] == '-' || nb[i + 1] == '+' || (nb[i - 1] >= '0'
-					&& nb[i - 1] <= '9'))
+			if (nb[i + 1] == '-' || nb[i + 1] == '+')
 				break ;
 			*sign = -1;
-			i++;
 		}
-		if (nb[i] == '+')
+		else if (nb[i] == '+')
 		{
-			if (nb[i + 1] == '-' || nb[i + 1] == '+' || (nb[i - 1] >= '0'
-					&& nb[i - 1] <= '9'))
+			if (nb[i + 1] == '-' || nb[i + 1] == '+')
 				break ;
 			*sign = 1;
-			i++;
 		}
 		check_test(result, i, sign, nb);
 		i++;
@@ -59,18 +53,35 @@ static void	check(char *nb, int i, long *result, int *sign)
 
 long	ft_atoi(char *str)
 {
-	char	*nb;
 	int		sign;
 	int		i;
 	long	result;
 
-	nb = (char *)str;
 	sign = 1;
 	i = 0;
 	result = 0;
-	while ((nb[i] >= 8 && nb[i] <= 13) || nb[i] == ' ')
+	while ((str[i] >= 8 && str[i] <= 13) || str[i] == ' ')
 		i++;
-	check(nb, i, &result, &sign);
+	check(str, i, &result, &sign);
 	result = result * sign;
-	return ((int)(result));
+	return (result);
 }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main(int ac, char **av)
+// {
+// 	int i = 0;
+// 	int j = 1;
+// 	while (i < 100)
+// 	{
+// 		if (atoi(av[j]) == ft_atoi(av[j]))
+// 		{
+// 			printf("%ld\n", ft_atoi(av[j]));
+// 		}
+// 		else
+// 			printf("KO\n");
+// 		i++;
+// 		j++;
+// 	}
+// }

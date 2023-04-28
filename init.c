@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 22:09:05 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/13 02:35:55 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/28 00:39:43 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	fun2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first)
 		sort_five(stack_a, stack_b);
 		free_and_exit(stack_a, stack_b, stack_tmp, first);
 	}
-	if (stack_a->size >= 6 && stack_a->size <= 100)
+	if (stack_a->size > 5 && stack_a->size <= 100)
 	{
 		interval = 15;
 		sort_tmp_arr(stack_tmp);
@@ -105,26 +105,26 @@ void	fun2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first)
 	}
 	else if (stack_a->size > 100)
 	{
-		interval = 40;
+		interval = 37;
 		sort_tmp_arr(stack_tmp);
 		range(stack_a, stack_b, stack_tmp, interval);
 		free_and_exit(stack_a, stack_b, stack_tmp, first);
 	}
 }
 
-void	init_to_zero(t_nb *stack_b, t_op *operations)
-{
-	int	i;
+// void	init_to_zero(t_nb *stack_b, t_op *operations)
+// {
+// 	int	i;
 
-	i = 0;
-	while (i < stack_b->size)
-	{
-		operations[i].ra = 0;
-		operations[i].rb = 0;
-		operations[i].rra = 0;
-		operations[i].rrb = 0;
-		operations[i].sc = 0;
-		operations[i].indexx = 0;
-		i++;
-	}
-}
+// 	i = 0;
+// 	while (i < stack_b->size)
+// 	{
+// 		operations[i].ra = 0;
+// 		operations[i].rb = 0;
+// 		operations[i].rra = 0;
+// 		operations[i].rrb = 0;
+// 		operations[i].sc = 0;
+// 		operations[i].indexx = 0;
+// 		i++;
+// 	}
+// }

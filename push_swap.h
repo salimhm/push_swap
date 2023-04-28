@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 18:50:50 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/13 02:43:38 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/13 04:45:56 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "/Users/shmimi/pw/libft/libft.h"
-# include <unistd.h>
 # include "bonus/gnl/get_next_line.h"
 # include <fcntl.h>
 # include <unistd.h>
@@ -115,10 +114,9 @@ void	range(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, int interval);
 void	calculate_distance(t_nb *stack_a, t_nb *stack_b);
 void	error(int ac, char **av);
 
-
 //Bonus
-void	fill_stacks_bonus(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char **first);
-int     check_sorted_bonus(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp);
+void	fill_stacks_bonus(char **first);
+int		check_sorted_bonus(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp);
 void	ra_bonus(t_nb *stack_a);
 void	rra_bonus(t_nb *stack_a);
 void	pb_bonus(t_nb *stack_a, t_nb *stack_b);
@@ -131,5 +129,10 @@ void	ss_bonus(t_nb *stack_a, t_nb *stack_b);
 void	rr_bonus(t_nb *stack_a, t_nb *stack_b);
 void	rrr_bonus(t_nb *stack_a, t_nb *stack_b);
 char	*ft_strjoin_bonus(char *s1, char *s2);
+void	check_str(int ac, char **av, char *s1, char *str);
+void	checker(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp);
+void	checker2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char *input);
+void	free_and_exit_bonus(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp,
+			char *input);
 
 #endif
