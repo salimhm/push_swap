@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:08:41 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/13 05:10:02 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/28 16:11:14 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	check_sorted_bonus(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp)
 	int	i;
 
 	i = 0;
+	if (stack_a->size == 1)
+		return (1);
 	while (i < stack_a->size)
 	{
 		if (stack_a->nb[i] < stack_a->nb[i + 1])

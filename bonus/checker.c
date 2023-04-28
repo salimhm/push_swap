@@ -6,13 +6,11 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 22:35:10 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/28 00:55:14 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/28 16:15:53 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <fcntl.h>
-#include <stdio.h>
 
 void	check_str(int ac, char **av, char *s1, char *str)
 {
@@ -79,15 +77,13 @@ void	checker(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp)
 	{
 		write(1, "OK\n", 3);
 		free(input);
-		free(stack_a->nb);
-		free(stack_b->nb);
-		free(stack_tmp->nb);
+		free_all(stack_a, stack_b, stack_tmp);
 		exit(0);
 	}
 	else
 	{
 		write(2, "KO\n", 3);
-		free(input);
+		free_all(stack_a, stack_b, stack_tmp);
 		exit(1);
 	}
 }

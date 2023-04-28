@@ -6,12 +6,11 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 17:45:24 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/28 00:39:57 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/28 16:22:38 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	get_pos(t_nb *stack_tmp, int nb)
 {

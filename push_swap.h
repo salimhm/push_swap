@@ -6,7 +6,7 @@
 /*   By: shmimi <shmimi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 18:50:50 by shmimi            #+#    #+#             */
-/*   Updated: 2023/04/13 04:45:56 by shmimi           ###   ########.fr       */
+/*   Updated: 2023/04/28 16:22:10 by shmimi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@ void	push_to_a_2(int index, t_nb *stack_a, t_nb *stack_b, t_op *operations);
 void	free2d(char **arg);
 void	free_and_exit(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp,
 			char **first);
+void	free_all(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp);
+void	free_and_exit_bonus(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp,
+			char *input);
 
 void	init(int ac, char **av);
 void	fill_stacks(char **first);
@@ -132,7 +135,5 @@ char	*ft_strjoin_bonus(char *s1, char *s2);
 void	check_str(int ac, char **av, char *s1, char *str);
 void	checker(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp);
 void	checker2(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp, char *input);
-void	free_and_exit_bonus(t_nb *stack_a, t_nb *stack_b, t_nb *stack_tmp,
-			char *input);
 
 #endif
